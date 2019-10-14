@@ -1,0 +1,2 @@
+include ':tasks-app', ':domain', ':util', ':model'
+rootProject.name='EspressoTest1'
