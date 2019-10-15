@@ -14,10 +14,10 @@ import org.junit.Rule
 import org.junit.Test
 
 
-class TaskActivityEspressoTest {
+class TaskActivityEspressoTestEspressoIdlingResource {
 
     @get:Rule
-    val testRule = ActivityTestRule<TaskActivity>(TaskActivity::class.java)
+    val activityRule = ActivityTestRule<TaskActivity>(TaskActivity::class.java)
 
     @Test
     fun screenHasNewTasksButtonAndItIsVisible() {
@@ -27,7 +27,8 @@ class TaskActivityEspressoTest {
 
     @Test
     fun tasksRepoReturns3Tasks_recyclerViewShouldHave3tasks() {
-        onView(withId(R.id.recycler_view)).check(RecyclerViewItemCountAssertion(3))
+        onView(withId(R.id.recycler_view))
+            .check(RecyclerViewItemCountAssertion(3))
     }
 
     @Test
