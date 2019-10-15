@@ -19,7 +19,7 @@ class TaskRepository @Inject constructor() : TaskDataSource {
             taskList.add(task)
             tasks.onNext(taskList)
             emitter.onSuccess(Unit)
-        }.delay(3000L, TimeUnit.MILLISECONDS)
+        }.delaySubscription(3000L, TimeUnit.MILLISECONDS)
     }
 
     companion object {
